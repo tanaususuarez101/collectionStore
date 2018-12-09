@@ -1,6 +1,8 @@
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
+
+
         <div class="carousel-item active">
           <%= image_tag("collection_reloj.jpg", :class => "d-block w-100" ,:alt =>"First slide" ) %>
         </div>
@@ -23,8 +25,14 @@
 
 <div class="container">
   <h1 class="display-1">Contenido de los item</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p>
+
+  <% 5.times do |value|  %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at corporis eos hic illum modi necessitatibus nesciunt quod unde? Ad alias asperiores facere fugiat numquam repellat soluta, temporibus voluptates.</p>
+  <% end %>
+  
+  
+  
+
+  
+  
 </div>

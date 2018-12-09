@@ -26,85 +26,16 @@
 
     <div id="content-header">
 
-
-
-      <!--------------------------------- NAVEGATION WEB ------------------------------->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-        <!-- MENU COLLAPSE -->
-        <a class="navbar-brand" href="">
-          <%= image_tag("logo-Collection.png", :class => "img-logo") %>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        </div>
-      </nav>
-
-      <!--------------------------------- MODAL LOGIN ---------------------------------------->
-      <div id="container-login">
-        <div class="modal fade" id="open-login" tabindex="-1" role="dialog" aria-hidden="true" >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-
-
-              <!--- Titulo model -->
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <!--- Cuerpo model -->
-              <div class="modal-body">
-                <form action="#" name="sign-nav" onsubmit="return loginValidation()" method="post">
-
-                  <div class="form-group ">
-                    <input type="email" name="email" class="form-control" id="Inputemail" placeholder="Email" required>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password" required>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-sm">Entrar </button>
-                    <a href="#">¿Has olvidado tu contraseña?</a>
-                  </div>
-
-                  <div class="form-group">
-                    ¿Eres nuevo?
-                    <a id="link-sign-up" href="#">Registrate</a>
-                  </div>
-                </form>
-              </div>
-
-
-              <!--- Pies model -->
-              <div class="modal-footer">
-                <div class="title-social">
-                  Entrar con tu red social
-                </div>
-                <div class="btn-social">
-                  <a onclick="return fuction_noFound()" href="#" class="fa fa-facebook"></a>
-                  <a onclick="return fuction_noFound()" href="#" class="fa fa-twitter"></a>
-                  <a onclick="return fuction_noFound()" href="#" class="fa fa-google"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="content-alert-login"> </div>
-      </div>
+      <%= render "partials/navitagion" %>
+      <%= render "partials/login" %>
 
     </div>
 
     <div id="content-body">
+
       <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
 
   </body>

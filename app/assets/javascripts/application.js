@@ -20,7 +20,7 @@ function loginValidation() {
     var password = document.forms["sign-nav"]["password"].value;
     var email = document.forms["sign-nav"]["email"].value;
 
-
+/*
     var http = new XMLHttpRequest();
     var URL = 'http://localhost:63342/MovieProject/data/user.json';
 
@@ -37,7 +37,7 @@ function loginValidation() {
 
             if (json_data[i].email === email ) {
                 if (password === json_data[i].password) {
-                    showAlert( 'alert-success' , 'Bienvenido a Moview DAW' );
+                    showAlert( 'alert-success' , 'Bienvenido a Collection' );
                     setCookie( 'username', email, 1 );
                     buildNavegation();
                 }
@@ -48,20 +48,22 @@ function loginValidation() {
         }
 
         /* datos from LOCALSTORE */
-        if (localStorage.getItem(email)){
-            var user_localstore =  JSON.parse(localStorage.getItem(email));
-            if (password === user_localstore.password) {
-                showAlert( 'alert-success' , 'Bienvenido a Moview DAW' );
-                setCookie( 'username', email, 1 );
-                buildNavegation();
-            }
-            else showAlert( 'alert-danger' , 'ERROR: contraseña incorrecta' );
-            return false;
 
+
+    //};
+
+    if (localStorage.getItem(email)){
+        var user_localstore =  JSON.parse(localStorage.getItem(email));
+        if (password === user_localstore.password) {
+            showAlert( 'alert-success' , 'Bienvenido a Collection' );
+            setCookie( 'username', email, 1 );
+            buildNavegation();
         }
-        showAlert( 'alert-warning' , 'Warning: Este usuario no está registrado' );
+        else showAlert( 'alert-danger' , 'ERROR: contraseña incorrecta' );
+        return false;
 
-    };
+    }
+    showAlert( 'alert-warning' , 'Warning: Este usuario no está registrado' );
     return false;
 }
 function showAlert(add_class, str) {
@@ -124,68 +126,10 @@ function getCookie(cname) {
 /************************** EVENTS  *************************************/
 
 
-var buttonNavegation = [
-    {
-        name : "Home",
-        id : "link-index"
-    }
 
-];
-
-
-function buildNavegation() {
-
-
-    var navHTML = '<ul class="navbar-nav mr-auto ">';
-    for (var i = 0; i < buttonNavegation.length; i++) {
-        navHTML += '<li class="nav-item ">\n' +
-            '           <a  id="' + buttonNavegation[i].id + '" class="nav-link" href="#">' + buttonNavegation[i].name + ' </a>\n' +
-            '       </li>';
-    }
-    navHTML += '</ul>';
-
-    var user = getCookie( 'username' );
-
-
-    navHTML +='<ul class="navbar-nav justify-content-end">';
-    if (user == '') {
-        navHTML += '<li class="nav-item ">\n' +
-            '           <a id="link-login" class="nav-link" href="#open-login" data-toggle="modal">Iniciar sesión </a>\n' +
-            '       </li>';
-        navHTML += '<li class="nav-item ">\n' +
-            '           <a id="link-sign-up" class="nav-link">Registrarme </a>\n' +
-            '       </li>';
-
-    } else {
-        navHTML +='<li class="nav-item dropdown">\n' +
-            '        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n' +
-            '          '+getCookie('username') +'\n' +
-            '        </a>\n' +
-            '        <div class="dropdown-menu" aria-labelledby="navbarDropdown">\n' +
-            '          <a class="dropdown-item" href="#">Mi cuenta</a>\n' +
-            '          <a class="dropdown-item" href="#">Mis artíclos</a>\n' +
-            '          <div class="dropdown-divider"></div>\n' +
-            '          <a id="link-logout" class="dropdown-item" href="#">Salir</a>\n' +
-            '        </div>\n' +
-            '      </li>';
-    }
-    navHTML += '</ul>';
-
-
-
-/*
-    navHTML += '<form class="form-inline my-2 my-lg-0">\n' +
-        '           <input class="form-control mr-sm-2" type="search" placeholder="ej: Venom..." aria-label="Search">\n' +
-        '           <button class="btn btn-success my-2 my-sm-0 fa fa-search" type="submit"></button>\n' +
-        '       </form>';
-*/
-
-    document.getElementById( 'navbarSupportedContent' ).innerHTML = navHTML;
-
-}
 
 
 
 $( document ).ready( function () {
-    buildNavegation();
+    //buildNavegation();
 });
