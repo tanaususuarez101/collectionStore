@@ -1,54 +1,42 @@
-<div id="container-sign-in" class="container">
-  <div id="content-alert-sign-in">
+<div class="container margin-top">
+
+  <div class="row justify-content-center align-self-center">
+    <div class="col-8">
+      <h2>Bienvenido a Collection</h2>
+      <small class="form-text text-muted">Registrándote podrás encontrar miles de artículos de colección, tener una biblioteca propia y ¡muchas cosas más!</small>
+      <hr class="my-4">
 
 
-  <!-- JAVASCRIPT, CSS -->
-
-  <div class="container-title">
-    <h1 class="display-5">Nuevo usuario</h1>
-    <hr class="my-4">
-  </div>
-
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          <%= f.label :email,"Correo electrónico" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",:class=>"form-control" %>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <%= f.label :password, "Contraseña" %><br />
-          <%= f.password_field :password, autocomplete: "new-password",:class=>"form-control" %>
-          <div class="invalid-feedback">
-            La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
-            NO puede tener otros símbolos.
-            Ejemplo:
-            w3Unpocodet0d0
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :email,"Correo electrónico" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",:class=>"form-control",:placeholder=>"Introduce tu correo" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group col-md-6">
-          <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",:class=>"form-control" %>
-          <div class="invalid-feedback">
-            La password debe de coincidir
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :password, "Contraseña" %><br />
+              <%= f.password_field :password, autocomplete: "new-password",:class=>"form-control",:placeholder=>"Introduce tu password" %>
+
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",:class=>"form-control",:placeholder=>"Introduce la misma contraseña" %>
+            </div>
           </div>
-        </div>
+
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="condition_ckeck" required>
+            <label class="form-check-label" for="condition_ckeck">He leído los <a href="#">Términos y condiciones</a> del uso de mis datos</label>
+          </div>
+
+          <%= f.submit "Registrarme",:class=>"btn btn-primary" %>
+
+      <% end %>
       </div>
-
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="condition_ckeck" required>
-        <label class="form-check-label" for="condition_ckeck">He leído los <a href="#">Términos y condiciones</a> del uso de mis datos</label>
-      </div>
-
-      <%= f.submit "Registrarme",:class=>"btn btn-primary" %>
-
-  <% end %>
-
-
 
   </div>
 </div>

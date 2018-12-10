@@ -1,0 +1,31 @@
+
+<div class="container margin-top">
+  <div class="row justify-content-center align-self-center">
+    <div class="col-8">
+      <h2>Añade un nuevo artículo a la coleción</h2>
+      <hr class="my-4">
+
+      <%= form_for(@articules) do |f| %>
+        <div class="form-group">
+          <label for="input_new_article">Título</label>
+          <%= f.text_field :title, :placeholder=>"Pon un nombre corto que atraiga al lector",:class=>"form-control", :id=>"input_new_article" %>
+        </div>
+        <div class="form-group">
+          <label for="textArea_new_article">Descripción del artículo</label>
+          <%= f.text_area :body, :placeholder=>"Añade una descripción en pocas palabras", :class=>"form-control", :id=>"textArea_new_article", :rows=>"3" %>
+        </div>
+        <div class="form-group">
+          <label for="picture_new_article">Seleccione una imagen</label>
+          <%= f.text_field :thumdnail, :class=>"form-control",:id=>"picture_new_article",:lang=>"es" %>
+        </div>
+
+        <div class="form-group">
+          <label class="" for="price_new_article">Precio de venta</label>
+          <%= f.number_field :price,:step=>"0.01",:id=>"price_new_article" %>
+        </div>
+
+        <%= f.submit "Guardar",:class=>"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
