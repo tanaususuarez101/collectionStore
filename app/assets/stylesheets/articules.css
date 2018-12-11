@@ -1,3 +1,6 @@
-.card{
-    max-width: 40em;
+
+.truncate-text
+{
+    overflow: auto;
+    max-height: 5em;
 }

@@ -6,14 +6,19 @@
   <h3>Artículos de colectión disponibles</h3>
 
 
-  <div class="card-deck">
+  <div class="card-columns">
     <% @articules.each do | article |%>
-      <div class="article-card text-center bg-light" style="width: 18rem;">
-        <img class="card-img-top" src="<%= article.thumdnail %>" alt="Card image cap" style="height: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= article.title %></h5>
-          <p class="card-text"><%= article.body %></p>
-          <a href="/articules/<%= article.id %>" class="card-link">Card link</a>
+
+      <div class="card" style="max-width: 18rem;">
+          <img class="card-img-top" src="<%= article.thumdnail %>" alt="Card image cap" style="height: 17rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="/articules/<%= article.id %>" class="card-link"> <%= article.title %></a>
+            </h5>
+            <p  class="truncate-text card-text"><%= article.body %></p>
+          </div>
+        <div class="card-footer">
+          <span class="badge badge-pill badge-success"><%= article.price %>€</span>
         </div>
       </div>
     <% end %>
