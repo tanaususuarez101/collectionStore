@@ -1,8 +1,15 @@
 
+
+
 <div class="container margin-top">
-  <h3><%= @articules.title %></h3>
-  <div>
-    <img style="max-width: 40rem;" src="<%= @articules.thumdnail %>" alt="<%= @articules.title %>">
-    <%= @articules.body %>
+  <div class="row">
+    <h1 style="margin: 0 auto;"><%= @articules.title %></h1>
+  </div>
+  <hr class="my-4">
+  <div class="row">
+    <div class="col"><img style="margin: 0 auto; max-width: 20rem;" src="<%= @articules.thumdnail %>" alt="<%= @articules.thumdnail %>"></div>
+    <div class="col">
+      <p><%= @articules.body %></p>
+    </div>
   </div>
 </div>

@@ -4,3 +4,27 @@
     overflow: auto;
     max-height: 5em;
 }
+
+.card{
+    float: left;
+    width: 260px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.card-title
+{
+    height: 72px;
+}
+
+.form-number
+{
+    display: inline;
+}
+.form-number-label,
+.form-number-input{
+    float: left; !important;
+}
+
+
+

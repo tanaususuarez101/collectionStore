@@ -17,16 +17,34 @@ class ArticulesController < ApplicationController
 
   #POST /articules/
   def create
-    @articules = Articule.new(title:params[:articule][:title],
+    @articules = current_user.articules.new(title:params[:articule][:title],
                               body:params[:articule][:body],
                               thumdnail:params[:articule][:thumdnail],
                               price:params[:articule][:price])
-    @articules.save
-    redirect_to @articules
+
+    if @articules.save
+      redirect_to @articules
+    else
+      render :new
+    end
+
+  end
+
+  def edit
+    @articules = Articule.find(params[:id])
   end
 
   def update
+    @articules = Articule.find(params[:id])
 
+    if @articules.update(title:params[:articule][:title],
+                         body:params[:articule][:body],
+                         thumdnail:params[:articule][:thumdnail],
+                         price:params[:articule][:price])
+      redirect_to @articules
+    else
+      render :edit
+    end
   end
 
 end

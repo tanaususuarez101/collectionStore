@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete "/articules" delete
   get "/articules/:id" show
   get "/articules" new
-  get "articules/:id/edit/" edit
+  get "/articules/:id/edit/" edit
   path "/articules/:id" update
   put "/articules/:id" update
 =end
