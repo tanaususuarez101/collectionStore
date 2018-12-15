@@ -23,9 +23,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o"></i>Mi cuenta</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><%= current_user.email %></a>
-            <a class="dropdown-item" href="#">Mis artíclos</a>
-            <%= link_to "Crear artículos", "Crear artículo",:href=>"/articules/new" ,:class=> "dropdown-item"%>
+            <a class="dropdown-item" href="/user/<%= current_user.id %>">Mis artíclos</a>
             <div class="dropdown-divider"></div>
             <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete ,:class=> "dropdown-item"%>
           </div>
@@ -34,11 +32,6 @@
         <li class="nav item">
           <%= link_to "Iniciar sesión", new_user_session_path ,:class => "nav-link"  %>
         </li>
-        <!--
-        <li class="nav item">
-          <%= link_to "Registrarme",new_user_registration_path, :class => "nav-link" %>
-        </li>
-        -->
       <% end %>
 
     </ul>

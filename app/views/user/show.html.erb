@@ -1,0 +1,40 @@
+
+
+
+<div class="container margin-top">
+
+  <h3>Bienvenido <%= @user.email %></h3>
+  <small class="form-text text-muted">Hola! Aquí puedes encontrar los artículos que has creado. ¡Un saludo!</small>
+  <hr class="my-4">
+  <div class="margin-top">
+    <a href="/articules/new/" class="btn btn-primary">Crear artículo</a>
+  </div>
+
+  <h3 class="margin-top">Artículos creado</h3>
+  <% @user.articules.each do | article |%>
+
+    <div class="card" style="max-width: 18rem;">
+      <img class="card-img-top" src="<%= article.thumdnail %>" alt="Card image cap" style="height: 17rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="/articules/<%= article.id %>" class="card-link"> <%= article.title %></a>
+        </h5>
+      </div>
+      <div class="card-footer text-center">
+
+        <div>
+          <span class="badge badge-pill badge-success"><%= article.price %>€</span>
+        </div>
+        <hr class="my-4">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+          <a class="btn btn-primary" href="/articules/<%= article.id %>/edit/">Modificar</a>
+          <%= link_to "Eliminar", article, method: :delete,:class => "btn btn-danger" %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+

@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :articules
 =begin
-  get "/articules" index
+  get "/articules" show
   post "/articules" create
-  delete "/articules" delete
+  delete "/articules/:id" destroy
   get "/articules/:id" show
   get "/articules" new
   get "/articules/:id/edit/" edit
@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   root 'articules#index'
 
   get '/main', to: 'articules#indexx'
-  get '/index', to: 'articules#index'
+  get '/show', to: 'articules#show'
+
+
+  get 'user/:id' => 'user#show'
 
 end
